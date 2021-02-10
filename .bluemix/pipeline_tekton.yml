@@ -47,6 +47,12 @@ triggers:
     name: manual-run
     eventListener: manual-run
     properties: []
+  - type: timer
+    name: timed-trigger
+    eventListener: ${GIT_COMMIT_EVENT_LISTENER_NAME}
+    disabled: true
+    timezone: "America/Toronto"
+    cron: "*/5 * * * *"
 properties:
   - type: secure
     name: toolchain-apikey
